@@ -10,4 +10,4 @@ jobs:
     steps:
       - name: Send request to Web App
         run: curl -s https://bookingbm-dnbscacuavc7dhbb.eastasia-01.azurewebsites.net/login/
-        run: curl -s https://yoyakumate-a7fzbyf9c9acdnes.japanwest-01.azurewebsites.net
+        run: curl -s https://yoyakumate-a7fzbyf9c9acdnes.japanwest-01.azurewebsites.net/login/
