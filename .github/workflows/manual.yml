@@ -1,0 +1,12 @@
+name: Wake Up Web App
+
+on:
+  schedule:
+    - cron: '*/15 6-22 * * *'  # 每天 6:00 到 22:45 每 15 分钟运行一次（UTC 时间）
+
+jobs:
+  wakeup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send request to Web App
+        run: curl -s https://bookingbm-dnbscacuavc7dhbb.eastasia-01.azurewebsites.net/login/
