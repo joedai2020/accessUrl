@@ -2,7 +2,7 @@ name: Wake Up Web App
 
 on:
   schedule:
-    - cron: '*/5 0-13 * * *'
+    - cron: '*/10 0-13 * * *'
 
 jobs:
   wakeup:
