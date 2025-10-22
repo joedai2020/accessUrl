@@ -2,7 +2,7 @@ name: Wake Up Web App
 
 on:
   schedule:
-    - cron: '*/15 6-22 * * *'  # 每天 6:00 到 22:45 每 15 分钟运行一次（UTC 时间）
+    - cron: '*/15 21-13 * * *'
 
 jobs:
   wakeup:
