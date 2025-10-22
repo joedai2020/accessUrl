@@ -3,6 +3,7 @@ name: Wake Up Web App
 on:
   schedule:
     - cron: '*/15 0-13 * * *'
+  workflow_dispatch:
 
 jobs:
   wakeup:
