@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send request to Web App
-        - name: Send requests to both URLs
         run: |
               curl -s https://bookingbm-dnbscacuavc7dhbb.eastasia-01.azurewebsites.net/login/
               curl -s https://yoyakumate-a7fzbyf9c9acdnes.japanwest-01.azurewebsites.net/login/
