@@ -1,0 +1,39 @@
+
+name: Daily Django Batch
+
+on:
+  schedule:
+    - cron: '17 18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: django-daily-batch
+  cancel-in-progress: false
+
+jobs:
+  run-batch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Call Django Batch API
+        env:
+          BATCH_URL: ${{ secrets.BATCH_URL }}
+          BATCH_TOKEN: ${{ secrets.BATCH_TOKEN }}
+        run: |
+          set -eu
+
+          test -n "$BATCH_URL"
+          test -n "$BATCH_TOKEN"
+
+          curl --fail-with-body \
+            --silent \
+            --show-error \
+            --max-time 300 \
+            --request POST \
+            --header "Authorization: Bearer ${BATCH_TOKEN}" \
+            --header "Accept: application/json" \
+            "$BATCH_URL"
